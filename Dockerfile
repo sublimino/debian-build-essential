@@ -1,9 +1,13 @@
-FROM debian:jessie-slim
+FROM debian:buster-slim
 
 RUN \
-  apt-get update && \
-  apt-get install -y \
-    build-essential \
-    nasm \
-    vim-common \
-    git
+  DEBIAN_FRONTEND=noninteractive \
+    apt update && apt install --assume-yes --no-install-recommends \
+      build-essential \
+      nasm \
+      vim-common \
+      curl \
+      wget \
+      git \
+  \
+  && rm -rf /var/lib/apt/lists/*
