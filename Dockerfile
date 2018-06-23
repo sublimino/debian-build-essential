@@ -9,5 +9,6 @@ RUN \
       curl \
       wget \
       git \
+      docker.io \
   \
   && rm -rf /var/lib/apt/lists/*
